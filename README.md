@@ -1,4 +1,5 @@
-![image](https://github.com/rexpires/SQL_DataCleaning_Project/assets/105373494/68081852-40e0-4d58-8bba-21c34fe6968d)# Projeto Limpeza e Transformação de Dados com SQL
+![image](https://github.com/rexpires/SQL_DataCleaning_Project/assets/105373494/1a4b9e95-22f8-471d-adae-ec9a1c3a0324)
+# Projeto Limpeza e Transformação de Dados com SQL
 
 Neste projeto realizo diversas consultas com SQL com o intuito de limpar e transformar alguns dados da base de dados chamada "Data Cleaning Project DB". O passo a passo foi o seguinte:
 
@@ -32,7 +33,7 @@ Portanto criei uma nova coluna "SalesDateConverted" (formato Date), utilizei o "
 
 ![image](https://github.com/rexpires/SQL_DataCleaning_Project/assets/105373494/fd18f557-d0c2-402a-86ab-957b8d1ef2b2)
 
-
+-----------------------------------------------------------------------------------------------------
 2  Preencher dados nulos em "Property Address".
 
 O endereço é um dado importante para o negócio e não deve estar em branco.
@@ -57,7 +58,7 @@ Rodando a penúltima query novamente ("SELECT"), nenhum resultado é encontrado,
 
 ![image](https://github.com/rexpires/SQL_DataCleaning_Project/assets/105373494/3d5a246b-0e82-4774-860c-e85f4e6d409c)
 
-
+-----------------------------------------------------------------------------------------------------
 3  Quebrar "OwnerAddress" e "PropertyAddress" em colunas individuais (address, city, state).
 
 Selecionando as colunas "Property Address" e "Owner Address" encontramos o endereço completo, endereço, cidade e estado, o que acaba dificultando uma análise mais aprimorada desses dados.
@@ -76,7 +77,7 @@ E também criei e atualizei as novas colunas "OwnerSplitAddress", "OwnerSplitCit
 
 ![image](https://github.com/rexpires/SQL_DataCleaning_Project/assets/105373494/9d8d6049-c507-4d4f-bd9d-86c065f276fd)
 
-
+-----------------------------------------------------------------------------------------------------
 4  Mudar Y ou N para Yes e NO no campo "Sold as Vacant".
 
 Na coluna "SoldAsVacant" encontrei os dados "Y", "N", "Yes" e "No". Apesar de compreender que "N" e "No" são a mesma coisa, por exemplo, é interessante realizar a padronização dos dados para o mesmo valor.
@@ -96,6 +97,7 @@ Resultado: valores padronizados:
 
 ![image](https://github.com/rexpires/SQL_DataCleaning_Project/assets/105373494/5582aa32-7c0a-4d12-9e80-2bd609f6085a)
 
+-----------------------------------------------------------------------------------------------------
 5  Remover valores duplicados.
 
 Utilizando o "ROW_NUMBER()" e "PARTITION BY" de colunas importantes, encontrei linhas que eram exatamente iguais, sendo que é possível identificá-la pelo índice 2 da coluna criada "row_num" ao final da tabela:
@@ -114,6 +116,7 @@ Não há mais valores duplicados:
 
 ![image](https://github.com/rexpires/SQL_DataCleaning_Project/assets/105373494/6118883e-6bcd-4425-bcac-1ae160050713)
 
+-----------------------------------------------------------------------------------------------------
 6  Deletar colunas não usadas.
 
 As colunas que alterei nos tópicos anteriores "SaleDate", "PropertyAddress", "OwnerAddress" e "TaxDistinct" (esta última não modifiquei, mas entendo que não necessitaria dela em uma análise) devem ser deletadas, pois não têm mais utilidade, portanto:
